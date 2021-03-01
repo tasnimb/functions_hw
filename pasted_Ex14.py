@@ -56,7 +56,7 @@ def who_wins():
 
     def play_again():
 
-        new_game = input("Would you like to play again? Enter 'Y' for Yes , 'N' for No ")
+        new_game = input("Would you like to play again? Enter 'Y' for Yes , 'N' for No: ")
         new_game_input = new_game
         if new_game_input == 'Y':
             print("Let's play again")
