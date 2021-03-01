@@ -1,0 +1,5 @@
+You won against the computer on Mon, 01 March, 21
+The computer beat you on Mon, 01 March, 21
+The computer beat you on Mon, 01 March, 21
+The computer beat you on: Mon, 01 March, 21
+It was a draw on: Mon, 01 March, 21
