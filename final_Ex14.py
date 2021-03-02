@@ -8,21 +8,25 @@ def rock_paper_scissors():
 
         player_selection = input("Please enter 'R' for Rock, 'P' for Paper or 'S' for Scissors: ")
 
-        if player_selection == 'R':
+        if player_selection in ["R", "r", "Rock", "rock","ROCK"]:
             your_play = 'Rock'
             print("You chose: Rock")
-        elif player_selection == 'P':
+        elif player_selection in ["P", "p", "Paper", "paper","PAPER"]:
             your_play = 'Paper'
             print("You chose: Paper")
-        else:
-            your_play = 'Scissors'
+        elif player_selection in ["S","s","Scissors","scissors","SCISSORS"]:
+            your_play = "Scissors"
             print("You chose: Scissors")
+        else:
+            print("Invalid input, please try again")
+            rock_paper_scissors()
 
             # player_choice = {'R':'Rock', 'P':'Paper', 'S':'Scissors'}
             # your_play = player_choice.get(player1)
             # print("You chose :", your_play)
 
         return your_play
+
 
     def computer_rps():
 
@@ -82,10 +86,10 @@ def rock_paper_scissors():
 
         new_game = input("Would you like to play again? Enter 'Y' for Yes , 'N' for No: ")
         new_game_input = new_game
-        if new_game_input == 'Y':
-            print("Let's play again")
+        if new_game_input in ["Y", "y", "Yes", "yes", "YES"]:
+            print("Let's play again!")
             rock_paper_scissors()
-        elif new_game_input == 'N':
+        elif new_game_input in ["N", "n", "No", "no", "NO"]:
             print("Thanks for playing, goodbye")
             exit()
         else:
