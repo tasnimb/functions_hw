@@ -8,25 +8,24 @@ def rock_paper_scissors():
 
         player_selection = input("Please enter 'R' for Rock, 'P' for Paper or 'S' for Scissors: ")
 
-        if player_selection in ["R", "r", "Rock", "rock","ROCK"]:
-            your_play = 'Rock'
+        if player_selection in ["R", "r", "Rock", "rock", "ROCK"]:
+            player_selection = 'Rock'
             print("You chose: Rock")
-        elif player_selection in ["P", "p", "Paper", "paper","PAPER"]:
-            your_play = 'Paper'
+        elif player_selection in ["P", "p", "Paper", "paper", "PAPER"]:
+            player_selection = 'Paper'
             print("You chose: Paper")
-        elif player_selection in ["S","s","Scissors","scissors","SCISSORS"]:
-            your_play = "Scissors"
+        elif player_selection in ["S", "s", "Scissors", "scissors", "SCISSORS"]:
+            player_selection = "Scissors"
             print("You chose: Scissors")
         else:
             print("Invalid input, please try again")
             rock_paper_scissors()
 
             # player_choice = {'R':'Rock', 'P':'Paper', 'S':'Scissors'}
-            # your_play = player_choice.get(player1)
-            # print("You chose :", your_play)
+            # player_selection = player_choice.get(player1)
+            # print("You chose :", player_selection)
 
-        return your_play #we were able to fix this by renaming is player_selection, but not sure why
-
+        return player_selection
 
     def computer_rps():
 
@@ -48,10 +47,7 @@ def rock_paper_scissors():
 
         return computer_play
 
-    player_fn = player_rps()
-    computer_fn = computer_rps()
-
-    def who_wins(player=player_fn, computer=computer_fn):
+    def who_wins(player, computer):
         if player == computer:
             print("You draw!")
             winner = "draw"
@@ -63,8 +59,6 @@ def rock_paper_scissors():
             print("You lose")
             winner = "computer"
         return winner
-
-    champion = who_wins()
 
     def result():
         # file_record = open("win_tally.txt", "w")
@@ -80,8 +74,6 @@ def rock_paper_scissors():
             file_record.writelines("The computer beat you on: {}\n".format(time_now))
         file_record.close()
 
-    result()
-
     def play_again():
 
         new_game = input("Would you like to play again? Enter 'Y' for Yes , 'N' for No: ")
@@ -96,6 +88,10 @@ def rock_paper_scissors():
             print("Invalid input. Goodbye. We hope you'll play again soon.")
             exit()
 
+    # player_fn = player_rps()
+    # computer_fn = computer_rps()
+    champion = who_wins(player_rps(), computer_rps())
+    result()
     play_again()
 
 
